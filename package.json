@@ -1,0 +1,20 @@
+{
+  "name": "templateAngularJS",
+  "version": "1.0.0",
+  "description": "scaffold de trabajo con angularJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremiasramirez/templateAngularJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremiasramirez/templateAngularJS/issues"
+  },
+  "homepage": "https://github.com/jeremiasramirez/templateAngularJS#readme"
+}
