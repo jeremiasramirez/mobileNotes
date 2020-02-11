@@ -21,6 +21,7 @@
     "angular": "^1.7.9",
     "angular-route": "^1.7.9",
     "angular-swipe": "^0.4.0",
+    "jeremias-easydom": "^1.0.1",
     "jeremias-lib": "^1.1.7"
   }
 }

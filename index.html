@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Mobile | notes</title>
+
+    <meta name="viewport" content="width=device-width,
+			initial-scale=1.0,
+			minimum-scale=1.0, maximum-scale=1.0">
+
+
+
+
+    <link rel="icon" href="assets/icon/icon.png">
+
+
+    <!-- main css -->
+    <link rel="stylesheet" href="public/css/index.css">
+
+
+    <!-- main js -->
+    <script src="public/js/index.js"></script>
+
+
+    <!-- fontawesome -->
+    <script src="public/fontawesome/js/all.js"></script>
+
+
+    <!-- jeremias-lib css -->
+    <link rel="stylesheet" href="node_modules/jeremias-lib/css/jeremias-lib.css">
+
+
+    <!-- easydom css -->
+    <link rel="stylesheet" href="node_modules/jeremias-easydom/easydom.css">
+
+
+    <!-- easydom js -->
+    <script src="node_modules/jeremias-easydom/easydom.js"></script>
+
+
+    <!-- angular js -->
+    <script src="node_modules/angular/angular.min.js">
+    </script>
+
+
+    <!-- angular route -->
+    <script src="node_modules/angular-route/angular-route.js">
+    </script>
+
+
+    <!-- Config app -->
+    <script src="public/config/app.config.js">
+    </script>
+
+
+    <!-- services -->
+    <!-- <script src="public/services/services.http.js"></script> -->
+
+    <!-- filters -->
+
+    <script src="public/filters/cutKey.filter.js"></script>
+    <script src="public/filters/cutKeyAndChar.filter.js"></script>
+    <!-- controllers -->
+    <script src="public/controller/main.controller.js"></script>
+
+    <script src="public/controller/countries.controllerES.js"></script>
+
+    <script src="public/controller/countries.controllerEN.js"></script>
+
+    <script src="public/controller/countries.controllerChoose.js"></script>
+
+
+
+
+
+    <!-- config routes -->
+    <script src="public/config.route.js"></script>
+
+
+
+</head>
+
+<body ng-controller="main">
+
+
+    <nav class="menu--black__">
+        <li title="Home" class="active--red"><a href="#"><span class="far fa-clock"></span > </a></li>
+    </nav>
+
+
+
+    <div ng-view>
+
+    </div>
+
+
+
+</body>
+
+</html>
