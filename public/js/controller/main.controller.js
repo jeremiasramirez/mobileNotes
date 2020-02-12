@@ -25,15 +25,13 @@ app.controller("main", ["$scope", function($scope){
       }]
 
 
+      $scope.updateNote = function(key){
+
+        $scope.displayUpdate(key);
+
+      }
 
 
-
-  $scope.addNote = function(){
-
-  }
-  $scope.removed = function(key){
-
-  }
 
   $scope.removeNote = function(key){
 
@@ -49,12 +47,9 @@ app.controller("main", ["$scope", function($scope){
 
   }
 
-  $scope.updateNote = function(){
-    $scope.displayUpdate();
 
-  }
 
-  $scope.displayUpdate = function(){
+  $scope.displayUpdate = function(key){
 
 
           let containerUpdate = document.createElement("div");
@@ -84,13 +79,18 @@ app.controller("main", ["$scope", function($scope){
             let inputAuthor = document.createElement("input");
               inputAuthor.setAttribute("class", "inputAuthor   in")
               inputAuthor.setAttribute("type", "text")
-                inputAuthor.setAttribute("placeholder", "Author name")
+              inputAuthor.setAttribute("value", $scope.notes[key].author)
+              inputAuthor.setAttribute("placeholder", "Author name")
               inputAuthor.setAttribute("id", "inputAuthor")
               containerUpdate.appendChild(inputAuthor)
+
+
+
 
               let inputTitle = document.createElement("input");
                 inputTitle.setAttribute("class", "inputTitle  in")
                 inputTitle.setAttribute("placeholder", "Title")
+                inputTitle.setAttribute("value", $scope.notes[key].title)
                 inputTitle.setAttribute("type", "text")
                 inputTitle.setAttribute("id", "inputTitle")
                 containerUpdate.appendChild(inputTitle)
@@ -110,6 +110,7 @@ app.controller("main", ["$scope", function($scope){
 
 
 
+
               let buttonUpdate = document.createElement("button");
                 buttonUpdate.setAttribute("class", "buttonUpdate btn--add minmin in")
                 buttonUpdate.textContent = "Update"
@@ -120,12 +121,25 @@ app.controller("main", ["$scope", function($scope){
 
             document.body.appendChild(containerUpdate);
 
+            let desc = withId("description")
+              desc.textContent =$scope.notes[key].noteNotes
+           
             let windowsUpdate = withId("containerUpdate")
             let closeUpdateWindow = withId("containerRemove")
 
             closeUpdateWindow.addEventListener("click", ()=>{
                 windowsUpdate.remove();
             },false)
+
+
+
+            let auth =withId("inputAuthor")
+            let titl =withId("inputTitle")
+            let descr = withId("description")
+
+            $scope.notes[key].title =  auth.value;
+            $scope.notes[key].author =  titl.value;
+            $scope.notes[key].author =  descr.value;
 
 
             // setTimeout(()=>{windows.remove()},1000)
