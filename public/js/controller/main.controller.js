@@ -62,6 +62,11 @@ app.controller("main", ["$scope", function($scope){
 
   }
 
+  $scope.documentation = function(){
+
+    floatNotificationInfo("klk")
+
+  }
 
 
   $scope.displayUpdate = function(key){

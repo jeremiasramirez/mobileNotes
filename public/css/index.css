@@ -65,9 +65,17 @@
   font-weight: 600;
   color: orangered;
   font-size: 9px;
+  margin-left: -8px;
+  margin-top: -8px;
   text-transform: uppercase;
   font-family: arial;
 }
+.autor__card  .fa-user{
+  margin-bottom: -4px;
+  transform: scale(1.2);
+  color:
+}
+
 .info{
 margin-bottom: -20px;
 
@@ -149,4 +157,10 @@ margin-bottom: -20px;
 
 .wrapperDescription span{
   color: green;
+}
+
+.docu{
+  float: right;
+  color: blue;
+  cursor: pointer;
 }

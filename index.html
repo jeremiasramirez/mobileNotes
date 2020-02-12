@@ -73,6 +73,10 @@
     <li class="active--blue"><a href="#">Note</a></li>
   </nav>
 
+  <div class="docu" title="Documentation" ng-click="documentation()">
+      <span class="fas fa-paste"></span>
+  </div>
+
   <div class="search__note">
 
     <form class="form">
@@ -110,7 +114,7 @@
         <div class="navbar__card" >
 
           <div class="autor__card">
-              <span>{{note.author}}</span>
+              <span> <strong class="fas fa-user"></strong> {{note.author}}</span>
           </div>
 
           <div class="date">
