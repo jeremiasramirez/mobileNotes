@@ -3,6 +3,7 @@ app.controller("main", ["$scope", function($scope){
 
 
   $scope.showMax = 0;
+  $scope.showMoreDescription = false;
   $scope.searchNote='';
 
   let dat = new Date();
@@ -13,6 +14,15 @@ app.controller("main", ["$scope", function($scope){
 
   }
 
+  $scope.showMore = function (){
+
+      if ($scope.showMoreDescription == false){
+        $scope.showMoreDescription = true;
+      }
+      else{
+        $scope.showMoreDescription = false;
+      }
+  }
 
   $scope.notes = [{},{
       author: "jeremias ramirez",
@@ -251,7 +261,7 @@ app.controller("main", ["$scope", function($scope){
 
                     let description = document.createElement("textarea");
                       description.setAttribute("class", "description  in")
-                      description.setAttribute("cols", "32")
+                      description.setAttribute("cols", "33")
                       description.setAttribute("rows", "5")
                       description.setAttribute("placeholder", "Description")
                       description.setAttribute("type", "text")

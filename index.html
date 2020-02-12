@@ -117,11 +117,22 @@
             <span>{{note.hours}}:{{note.minutes}}</span>
 
           </div>
-
         </div>
+
         <div class="info">
           <h1>{{ note.title }}</h1>
-          <p>{{ note.noteNotes }}</p>
+           <span ng-click="showMore()" ng-if="showMoreDescription==false">
+             <strong class="fas fa-arrow-down" ></strong>
+           </span>
+
+
+          <div class="wrapperDescription in" ng-if="showMoreDescription==true">
+
+              <p>{{ note.noteNotes }}</p>
+              <span ng-click="showMore()"><strong class="fas fa-arrow-up"></strong></span>
+
+          </div>
+
         </div>
 
     </article>

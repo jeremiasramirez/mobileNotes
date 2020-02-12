@@ -47,7 +47,7 @@
   background: #eee;
   border-radius: 7px;
   padding: 0;
-  width: 310px;
+  width: 318px;
   border: 1px solid #eee;
 }
 .navbar__card{
@@ -99,7 +99,7 @@ margin-bottom: -20px;
 }
 
 .containerUpdate{
-  background-color: rgba(0%,0%,0%,90%);
+  background-color: rgba(0%,0%,5%,90%);
   width: 100vw;
   position: fixed;
   display: flex;
@@ -117,22 +117,36 @@ margin-bottom: -20px;
   margin-bottom: .6em;
   border-radius: 2px;
   width: 300px;
+  font-weight: 600;
+  padding: .9em;
   text-align: center;
 }
 .containerUpdate h1{
   font-size: 22px;
+  margin-top: -60px;
 }
 .containerUpdate textarea{
   border:none;
   margin-bottom: .4em;
   border-radius: 2px;
   text-align: center;
+
 }
 .closeUpdate{
   position: absolute;
   cursor: pointer;
-  top: 3px;
-  font-size: 18px;
-  right: 15px;
+  top: 0px;
+  background-color: orangered;
+  border-radius: 5%;
+  font-size: 20px;
+  right: 4px;
   color: white;
+  padding: .5em;
+}
+.info span{
+  color: green
+}
+
+.wrapperDescription span{
+  color: green;
 }
