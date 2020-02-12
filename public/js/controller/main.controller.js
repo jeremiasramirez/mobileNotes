@@ -37,60 +37,124 @@ app.controller("main", ["$scope", function($scope){
 
   $scope.removeNote = function(key){
 
-    // let iter = 0;
-    // if (iter<1){
-    //   iter++
-      $scope.displayWindow()
-        // $scope.notes.splice(key, key)
-
-        let cancel = withId("buttonCancels")
-        let ok = withId("buttonOks")
-
-        ok.addEventListener("click", function(){
-
-          alert("remoed")
-
-        }, false);
-
-        cancel.addEventListener("click", function(){
-
-          alert("canceled")
-
-        }, false);
 
 
-      // }
+
+        let cancel = withId("container__window")
+        $scope.displayWindow()
+
+
+      $scope.notes.splice(key, key)
+
+
   }
 
-  $scope.removeds = function(){
-    alert("button removed")
+  $scope.updateNote = function(){
+    $scope.displayUpdate();
+
   }
 
-  $scope.canceled = function(){
-    alert("button canceled")
-  }
-  $scope.updateNote = function(){}
+  $scope.displayUpdate = function(){
 
+
+          let containerUpdate = document.createElement("div");
+            containerUpdate.setAttribute("class", "containerUpdate in")
+            containerUpdate.setAttribute("id", "containerUpdate")
+
+
+            let titleContainer = document.createElement("h1");
+              titleContainer.setAttribute("class", "titleContainer text--orange in")
+              titleContainer.setAttribute("type", "text")
+              titleContainer.textContent = "Actualizar nota"
+              titleContainer.setAttribute("id", "titleContainer")
+              containerUpdate.appendChild(titleContainer)
+
+              let containerRemove = document.createElement("div");
+                containerRemove.setAttribute("class", " closeUpdate")
+                containerRemove.setAttribute("id", "containerRemove")
+                containerUpdate.appendChild(containerRemove)
+
+
+                let close = document.createElement("span");
+                  close.setAttribute("class", "fas fa-times closeUpdate")
+                  close.setAttribute("id", "close")
+                  containerRemove.appendChild(close)
+
+
+            let inputAuthor = document.createElement("input");
+              inputAuthor.setAttribute("class", "inputAuthor   in")
+              inputAuthor.setAttribute("type", "text")
+                inputAuthor.setAttribute("placeholder", "Author name")
+              inputAuthor.setAttribute("id", "inputAuthor")
+              containerUpdate.appendChild(inputAuthor)
+
+              let inputTitle = document.createElement("input");
+                inputTitle.setAttribute("class", "inputTitle  in")
+                inputTitle.setAttribute("placeholder", "Title")
+                inputTitle.setAttribute("type", "text")
+                inputTitle.setAttribute("id", "inputTitle")
+                containerUpdate.appendChild(inputTitle)
+
+
+                let description = document.createElement("textarea");
+                  description.setAttribute("class", "description  in")
+                  description.setAttribute("cols", "32")
+                  description.setAttribute("rows", "5")
+                  description.setAttribute("placeholder", "Description")
+                  description.setAttribute("type", "text")
+                  description.setAttribute("id", "description")
+                  containerUpdate.appendChild(description)
+
+
+
+
+
+
+              let buttonUpdate = document.createElement("button");
+                buttonUpdate.setAttribute("class", "buttonUpdate btn--add minmin in")
+                buttonUpdate.textContent = "Update"
+                buttonUpdate.setAttribute("id", "buttonUpdate")
+                containerUpdate.appendChild(buttonUpdate)
+
+
+
+            document.body.appendChild(containerUpdate);
+
+            let windowsUpdate = withId("containerUpdate")
+            let closeUpdateWindow = withId("containerRemove")
+
+            closeUpdateWindow.addEventListener("click", ()=>{
+                windowsUpdate.remove();
+            },false)
+
+
+            // setTimeout(()=>{windows.remove()},1000)
+
+
+
+
+  }
+
+  $scope.removeDisplay = function (){
+
+    let windows = withId("container__window")
+
+
+    if ( windows){
+      windows.remove()
+    }
+  }
   $scope.displayWindow = function (){
-    let container__window = document.createElement("div");
-      container__window.setAttribute("class", "container__window in")
-      container__window.setAttribute("id", "container__window")
+        let container__window = document.createElement("div");
+          container__window.setAttribute("class", "container__window in")
+          container__window.setAttribute("id", "container__window")
 
-    let buttonCancel = document.createElement("button");
-      buttonCancel.setAttribute("class", "buttonCancels")
-      buttonCancel.setAttribute("ng-click", "canceled()")
-      buttonCancel.setAttribute("id", "buttonCancels")
-      buttonCancel.textContent= "Cancel"
-      container__window.appendChild(buttonCancel);
+          container__window.textContent = "Nota removida"
+          document.body.appendChild(container__window);
 
+          let windows = withId("container__window")
+          setTimeout(()=>{windows.remove()},1000)
 
-    let buttonOk = document.createElement("button");
-      buttonOk.setAttribute("class", "buttonOks")
-      buttonOk.setAttribute("ng-click", "removeds()")
-      buttonOk.setAttribute("id", "buttonOks")
-      buttonOk.textContent= "Remove"
-      container__window.appendChild(buttonOk)
-      document.body.appendChild(container__window);
 
   }
 

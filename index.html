@@ -89,7 +89,7 @@
 </div>
 
 <section class="notes">
-    <article ng-repeat="note in notes track by $index" ng-swipe-left="removeNote($index)" class="card__note" ng-if="$index!=0">
+    <article ng-repeat="note in notes track by $index" ng-swipe-left="removeNote($index)" ng-swipe-right="updateNote($index)" class="card__note" ng-if="$index!=0">
 
         <div class="navbar__card">
 

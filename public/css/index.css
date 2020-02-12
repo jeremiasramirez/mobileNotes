@@ -86,32 +86,52 @@ margin-bottom: -20px;
 .container__window{
   position: fixed;
   top: 0;
+  font-weight: 600;
+  font-family: arial;
   z-index: 300;
   width: 100vw;
-  height: 35px;
+  height: 20px;
+  color: white;
   left: -3px;
-  background-color: rgba(0%, 0%, 0%, 90%);
+  background-color: green;
   text-align: center;
 }
-.container__window button{
-  margin-left: 10px;
-  top: -8px;
-  font-weight: 600;
-  width: 100px;
+
+.containerUpdate{
+  background-color: rgba(0%,0%,0%,90%);
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+
+  left: -3px;
+  z-index: 400;
+  height: 100vh;
+}
+.containerUpdate input{
+  border:none;
+  margin-bottom: .6em;
+  border-radius: 2px;
+  width: 300px;
+  text-align: center;
+}
+.containerUpdate h1{
+  font-size: 22px;
+}
+.containerUpdate textarea{
+  border:none;
+  margin-bottom: .4em;
+  border-radius: 2px;
+  text-align: center;
+}
+.closeUpdate{
+  position: absolute;
+  cursor: pointer;
+  top: 3px;
+  font-size: 18px;
+  right: 15px;
   color: white;
-  border: 0;
-  height: 52px;
-  position: relative;
-}
-.buttonCancels{
-
-  background-color: red;
-
-
-}
-.buttonOks{
-
-  background-color: rgba(0%, 80%, 0%, 70%);
-
-
 }
