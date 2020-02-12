@@ -1,3 +1,3 @@
 // app.module
 
-var app = angular.module("mobileNotes", []);
+var app = angular.module("mobileNotes", ["ngTouch"]);

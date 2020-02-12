@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="">
+<html lang="es" ng-app="mobileNotes">
 
 <head>
     <meta charset="UTF-8">
@@ -21,11 +21,11 @@
 
 
     <!-- main js -->
-    <script src="public/js/index.js"></script>
+    <script src="public/js/main.js"></script>
 
 
     <!-- fontawesome -->
-    <script src="public/fontawesome/js/all.js"></script>
+    <script src="assets/fontawesome/js/all.js"></script>
 
 
     <!-- jeremias-lib css -->
@@ -44,59 +44,83 @@
     <script src="node_modules/angular/angular.min.js">
     </script>
 
-
-    <!-- angular route -->
-    <script src="node_modules/angular-route/angular-route.js">
+    <!-- angular swipe -->
+    <script src="node_modules/angular-touch/angular-touch.min.js">
     </script>
 
 
     <!-- Config app -->
-    <script src="public/config/app.config.js">
+    <script src="public/js/config/app.config.js">
     </script>
 
 
-    <!-- services -->
-    <!-- <script src="public/services/services.http.js"></script> -->
-
-    <!-- filters -->
-
-    <script src="public/filters/cutKey.filter.js"></script>
-    <script src="public/filters/cutKeyAndChar.filter.js"></script>
-    <!-- controllers -->
-    <script src="public/controller/main.controller.js"></script>
-
-    <script src="public/controller/countries.controllerES.js"></script>
-
-    <script src="public/controller/countries.controllerEN.js"></script>
-
-    <script src="public/controller/countries.controllerChoose.js"></script>
+   <!-- controllers -->
+    <script src="public/js/controller/main.controller.js"></script>
 
 
-
-
-
-    <!-- config routes -->
-    <script src="public/config.route.js"></script>
 
 
 
 </head>
 
-<body ng-controller="main">
+<body ng-controller="main" class="in">
+
+  <nav class="menu--blue">
+    <li class="active--blue"><a href="#">Note</a></li>
+  </nav>
 
 
-    <nav class="menu--black__">
-        <li title="Home" class="active--red"><a href="#"><span class="far fa-clock"></span > </a></li>
-    </nav>
 
 
-
-    <div ng-view>
-
+    <div class="added__float" ng-if="2==1">
+        <p class="fas fa-plus"></p>
     </div>
 
 
 
-</body>
 
+
+  <div class="float__button" ng-click="addNote()">
+      <p class="fas fa-plus"></p>
+  </div>
+
+<div class="responsive" >
+  <h1 class="title text--blue">Notes</h1>
+</div>
+
+<section class="notes">
+    <article ng-repeat="note in notes track by $index" ng-swipe-left="removeNote($index)" class="card__note" ng-if="$index!=0">
+
+        <div class="navbar__card">
+
+          <div class="autor__card">
+              <span>{{note.author}}</span>
+          </div>
+
+          <div class="date">
+            <span>{{note.hours}}:{{note.minutes}}</span>
+
+          </div>
+
+        </div>
+        <div class="info">
+          <h1>{{ note.title }}</h1>
+          <p>{{ note.noteNotes }}</p>
+        </div>
+
+    </article>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
 </html>
