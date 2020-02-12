@@ -3,6 +3,7 @@ app.controller("main", ["$scope", function($scope){
 
 
   $scope.showMax = 0;
+  $scope.searchNote='';
 
   let dat = new Date();
   $scope.date = {

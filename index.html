@@ -44,6 +44,8 @@
     <script src="node_modules/angular/angular.min.js">
     </script>
 
+
+
     <!-- angular swipe -->
     <script src="node_modules/angular-touch/angular-touch.min.js">
     </script>
@@ -53,7 +55,9 @@
     <script src="public/js/config/app.config.js">
     </script>
 
-
+    <!-- angular filter -->
+    <script src="public/js/filter/custom.filter.js">
+    </script>
    <!-- controllers -->
     <script src="public/js/controller/main.controller.js"></script>
 
@@ -69,7 +73,13 @@
     <li class="active--blue"><a href="#">Note</a></li>
   </nav>
 
+  <div class="search__note">
 
+    <form class="form">
+        <input type="search" placeholder="Buscar una nota" ng-model="searchNote">
+    </form>
+
+  </div>
 
 
     <div class="added__float in" ng-if="showMax==1">
@@ -95,7 +105,7 @@
 </div>
 
 <section class="notes">
-    <article ng-repeat="note in notes track by $index" ng-swipe-left="removeNote($index)" ng-swipe-right="updateNote($index)" class="card__note" ng-if="$index!=0">
+    <article ng-repeat="note in notes track by $index| custom:search" ng-swipe-left="removeNote($index)" ng-swipe-right="updateNote($index)" class="card__note" ng-if="$index!=0">
 
         <div class="navbar__card">
 
