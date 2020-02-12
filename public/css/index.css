@@ -48,6 +48,7 @@
   border-radius: 7px;
   padding: 0;
   width: 318px;
+  /* margin-bottom: 3px; */
   border: 1px solid #eee;
 }
 .navbar__card{
@@ -120,6 +121,24 @@ margin-bottom: -20px;
   z-index: 400;
   height: 100vh;
 }
+.titleDocu{
+  margin-top: -10em;
+  font-size: 22px;
+}
+.containerDocu{
+  background-color: rgba(0%,4% ,0%,98%);
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+
+  left: -3px;
+  z-index: 400;
+  height: 100vh;
+}
 .containerUpdate input{
   border:none;
   margin-bottom: .6em;
@@ -157,6 +176,7 @@ margin-bottom: -20px;
 
 .wrapperDescription span{
   color: green;
+
 }
 
 .docu{

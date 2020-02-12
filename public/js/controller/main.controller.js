@@ -64,7 +64,67 @@ app.controller("main", ["$scope", function($scope){
 
   $scope.documentation = function(){
 
-    floatNotificationInfo("klk")
+      let containerDocu = document.createElement("div");
+        containerDocu.setAttribute("class", "containerDocu in")
+        containerDocu.setAttribute("id", "containerDocu")
+
+        let titleDocu = document.createElement("h1");
+          titleDocu.setAttribute("class", "titleDocu text--orange in")
+          titleDocu.textContent = "Documentation"
+          titleDocu.setAttribute("id", "titleDocu")
+          containerDocu.appendChild(titleDocu)
+
+          let form = document.createElement("form");
+            form.textContent = "Documentation"
+            form.setAttribute("id", "form")
+            form.setAttribute("class", "form")
+
+
+            let inputForm = document.createElement("input");
+              inputForm.textContent = "Documentation"
+              inputForm.setAttribute("id", "inputForm")
+              inputForm.setAttribute("placeholder", "Documentation")
+              inputForm.setAttribute("class", "input")
+                inputForm.setAttribute("type", "search")
+            form.appendChild(inputForm)
+
+            containerDocu.appendChild(form)
+
+        let text1Docu = document.createElement("p");
+          text1Docu.setAttribute("class", "text1Docu text--white in")
+          text1Docu.textContent = "1. swipe a la derecha para actualizar nota."
+          text1Docu.setAttribute("id", "text1Docu")
+          containerDocu.appendChild(text1Docu)
+
+          let textDocu2 = document.createElement("p");
+            textDocu2.setAttribute("class", "textDocu2 text--white in")
+            textDocu2.textContent = "2. swipe a la izquierda para eliminar la nota."
+            textDocu2.setAttribute("id", "textDocu2")
+            containerDocu.appendChild(textDocu2)
+
+
+
+         let close = document.createElement("span");
+           close.setAttribute("class", "fas fa-times closeUpdate")
+           close.setAttribute("id", "close")
+
+
+
+           let closeContainer = document.createElement("span");
+             closeContainer.setAttribute("class", "closeUpdate")
+             closeContainer.setAttribute("id", "close")
+             closeContainer.appendChild(close)
+             containerDocu.appendChild(closeContainer)
+        document.body.appendChild(containerDocu)
+
+
+        let windows = withId("containerDocu")
+        let clos = withId("close")
+
+        clos.addEventListener("click", function(){
+          windows.remove()
+        })
+
 
   }
 
@@ -118,7 +178,7 @@ app.controller("main", ["$scope", function($scope){
 
                 let description = document.createElement("textarea");
                   description.setAttribute("class", "description  in")
-                  description.setAttribute("cols", "32")
+                  description.setAttribute("cols", "34")
                   description.setAttribute("rows", "5")
                   description.setAttribute("placeholder", "Description")
                   description.setAttribute("type", "text")
@@ -266,7 +326,7 @@ app.controller("main", ["$scope", function($scope){
 
                     let description = document.createElement("textarea");
                       description.setAttribute("class", "description  in")
-                      description.setAttribute("cols", "33")
+                      description.setAttribute("cols", "34")
                       description.setAttribute("rows", "5")
                       description.setAttribute("placeholder", "Description")
                       description.setAttribute("type", "text")
