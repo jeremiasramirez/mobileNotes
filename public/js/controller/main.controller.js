@@ -119,11 +119,12 @@ app.controller("main", ["$scope", function($scope){
 
 
 
+
             document.body.appendChild(containerUpdate);
 
             let desc = withId("description")
               desc.textContent =$scope.notes[key].noteNotes
-           
+
             let windowsUpdate = withId("containerUpdate")
             let closeUpdateWindow = withId("containerRemove")
 
@@ -137,17 +138,30 @@ app.controller("main", ["$scope", function($scope){
             let titl =withId("inputTitle")
             let descr = withId("description")
 
-            $scope.notes[key].title =  auth.value;
-            $scope.notes[key].author =  titl.value;
-            $scope.notes[key].author =  descr.value;
 
 
-            // setTimeout(()=>{windows.remove()},1000)
+            let buttonUpd = withId("buttonUpdate")
+
+            buttonUpd.addEventListener("click", function(){
+
+              let wU = withId("containerUpdate")
+              $scope.notes[key].author =  auth.value;
+              $scope.notes[key].title =  titl.value;
+              $scope.notes[key].noteNotes =  descr.value;
+
+                setTimeout(()=>{
+                  wU.remove();
+                  $scope.$apply();
+                },300)
+
+            }, false);
+
 
 
 
 
   }
+
 
   $scope.removeDisplay = function (){
 
